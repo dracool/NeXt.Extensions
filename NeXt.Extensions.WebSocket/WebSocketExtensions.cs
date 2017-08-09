@@ -11,7 +11,7 @@ namespace NeXt.Extensions.WebSockets
 {
     public static class WebSocketExtensions
     {
-        private static async Task<string> ReceiveMessageAsync(WebSocket ws, byte[] buffer, CancellationToken ct)
+        private static async Task<string> ReceiveMessageAsync(this WebSocket ws, byte[] buffer, CancellationToken ct)
         {
             var buf = new ArraySegment<byte>(buffer);
             using (var stream = new MemoryStream())
